@@ -1,31 +1,18 @@
 #include <iostream>
 
-struct Node
-{
-	int data;
-	struct Node* left;
-	struct Node* right;
-
-	/* @param val - the initialization data*/
-	Node(int val)
-	{
-		data = val;
-
-		left = NULL;
-		right = NULL;
-	}
-};
+#include "BinaryTree.h"
 
 int main(int argc, char** argv)
 {
-	// create root
-	struct Node* root = new Node(1);
+	BinaryTree tree;
+	tree.insert(9);
+	tree.insert(5);
+	tree.insert(0);
+	tree.insert(2);
+	tree.insert(6);
+	tree.insert(12);
 
-	// Create leaf nodes
-	root->left = new Node(2);
-	root->right = new Node(3);
-
-	root->left->left = new Node(4);
+	tree.Traverse();
 
 	return EXIT_SUCCESS;
 }
